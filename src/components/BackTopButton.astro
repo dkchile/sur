@@ -1,0 +1,78 @@
+---
+import type { BackToTopButtonProps } from "@/types/BackTopButton";
+
+const { position = "right", offset = "1rem" } =
+	Astro.props as BackToTopButtonProps;
+const positionClass =
+	position === "right" ? "BackToTopButton--right" : "BackToTopButton--left";
+---
+
+<button
+    class={`BackToTopButton ${positionClass}`}
+    id="back-to-top-button"
+    style={`--offset: ${offset};`}
+    aria-hidden="true">
+    ↑
+</button>
+
+<script>
+	// Selecciona el botón
+	const backToTopButton = document.getElementById("back-to-top-button");
+
+	// Añade el evento para volver al tope de la página
+	backToTopButton?.addEventListener("click", () => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	});
+
+	// Muestra el botón cuando se ha hecho scroll suficiente
+	window.addEventListener("scroll", () => {
+		const scrollThreshold = window.innerHeight * 0.5; // 50% del alto de la ventana
+		if (window.scrollY > scrollThreshold) {
+			backToTopButton?.classList.add("is-visible");
+		} else {
+			backToTopButton?.classList.remove("is-visible");
+		}
+	});
+</script>
+
+<style lang="scss">
+	.BackToTopButton {
+		position: fixed;
+		bottom: var(--offset);
+		padding: 0.8rem;
+		width: 3rem;
+		height: 3rem;
+		border: none;
+		background-color: var(--primary-color);
+		color: white;
+		border-radius: 50%;
+		cursor: pointer;
+		font-size: 1rem;
+		opacity: 0;
+		visibility: hidden;
+		transition:
+			opacity 0.3s,
+			visibility 0.3s;
+
+		// Posiciones condicionales
+		&--right {
+			right: var(--offset);
+		}
+
+		&--left {
+			left: var(--offset);
+		}
+
+		// Estilos cuando es visible
+		&.is-visible {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		// Hover y focus para mejor accesibilidad
+		&:hover,
+		&:focus {
+			opacity: 0.8;
+		}
+	}
+</style>
