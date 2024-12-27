@@ -4,6 +4,6 @@ location: "Vitacura, Santiago"
 category: "new"
 description: "20 apartments of 106 to 375 square meters."
 order: 0
-link: "https://ibuenaventura.cl/proyectos-buenaventura/nuestra-sra-del-rosario-vitacura/"
+link: "https://www.ibuenaventura.cl/"
 image: "projects/NSdR.jpg"
 ---
