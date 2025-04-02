@@ -2,6 +2,7 @@
 import Card from "../components/Card.astro";
 import TheContent from "../components/TheContent.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import image from '../assets/World-Map_Services.png';
 ---
 
 <BaseLayout title="SurInvest - Services" description="">
@@ -45,6 +46,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 				Please select a region on the map to learn more about our advisory
 				services for private, public, and non-profit sectors
 			</p>
+			<div>
+				<img src="/public/World-Map_Services.png" usemap="#mapa" alt="Mapa del mundo mostrando los servicios" />
+				<map name="mapa">
+					<area shape="circle" coords="200,200,60" href="#Washington" alt="Washington" />
+					<area shape="circle" coords="200,350,60" href="#Chile" alt="Chile" />
+					<area shape="circle" coords="350,200,60" href="#Europa" alt="Europa" />
+					<area shape="circle" coords="500,260,100" href="#Asia" alt="Asia" />
+					<area shape="circle" coords="620,400,60" href="#Australia" alt="Australia" /></map>
+				</div>
+	
+			
 		</Card>
 
 		<Card title="Global Benchmarking & Policy Design" isAccordion={false}>
@@ -92,7 +104,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 				and exit of Bank Group activities with appropriate attention to external
 				validation, for improved accountably and enhanced learning.
 			</p>
-			<p>
+			<p>	<h2 id="Washington"></h2>
+
 				<span class="orgtext"
 					>Inter-American Development Bank (Washington, DC):</span
 				> Member of External Panel to advice the President and Senior Management
@@ -127,7 +140,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 					management systems and certification arrangements, and safety systems.
 				</li>
 			</ol>
-			<p>
+			<p><h2 id="Europa"></h2>
 				<span class="orgtext"
 					>Transparency International (TI, Berlin, Germany):
 				</span>Introduction and oversight of new effort leading to issuance of
@@ -148,6 +161,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 				enhanced support for design and implementation.
 			</p>
 			<p>
+				<h2 id="Asia"></h2>
 				<span class="orgtext"
 					>Asia Pacific Economic Cooperation (APEC) Secretariat (Tokyo, Japan):</span
 				>
@@ -171,7 +185,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 				of framework and operational guidelines to address sector governance and
 				corruption risk assessments in infrastructure projects and programs.
 			</p>
-			<p>
+
+  
+
 				<span class="orgtext"
 					>United Arab Emirates Ministry of International Cooperation and
 					Development — MICAD (Abu Dhabi, UAE):
@@ -189,7 +205,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 			title="Governance, risk assessment & mitigation policies"
 			isAccordion={false}>
 			<div>
-				<p>
+				
+	<p>
 					<span class="orgtext">World Bank &amp; AusAID:</span> Prototyping and subsequent
 					execution of analytical framework defined above (under Global Methodological
 					design) and application of approach in three countries (Ghana, Mali and
@@ -324,6 +341,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 			title="Diagnostic, institucional & policy assesments"
 			isAccordion={false}>
 			<div>
+				<div>
+  
+	
+  
+					<h2 id="Chile"></h2>
+		
+				  </div>
 				<span class="orgtext">Ethiopia and Eritrea (supported by UAE): </span> pursuant
 				to strategic framework developed as per above, project identification, prioritization,
 				and institutional options were defined to enable the two governments and
